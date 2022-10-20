@@ -10,8 +10,7 @@ const AppRoute = () => {
       <Switch>
         <Route path="/" exact element={<Home/>} />
         <Route path="/signin" exact element={<Signin/>} />
-
-        <Route path="/signup"  element={<Signup/>} />
+        <Route path="/signup" exact  element={<Signup/>} />
 
       </Switch>
     </BrowserRouter>
