@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {signout, isAutheticated } from '../auth/helper';
 
 const Menu = (history)=> (
     <div>
@@ -29,11 +30,27 @@ const Menu = (history)=> (
             Sign Up
             </Link>
         </li>
-        <li className="nav-item">
-            <Link className='nav-link'   to="/logout">
-            logout
+        {isAutheticated() && (
+            <li className="nav-item">
+            <Link className='nav-link'    onClick={()=>{
+                signout(()=>{
+                    history.push("")
+                })
+            }}>
+            Sign Out
             </Link>
-        </li>
+            {/* <span className='nav-link text-warning'
+            onClick={()=>{
+                signout(()=>{
+                    history.push("")
+                })
+            }}
+            >
+            Sign out 
+            </span> */}
+            </li>
+        )}
+            
         
         </ul>
     </div>
