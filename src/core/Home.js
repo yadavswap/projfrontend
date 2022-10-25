@@ -6,6 +6,7 @@ const  Home = ()=> {
     <div>
     <Menu/>
       <h1>Hello front end</h1>
+
     </div>
   );
 }

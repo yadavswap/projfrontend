@@ -15,6 +15,7 @@ const Signin = ()=> {
   const {user} = isAutheticated();
 
   const onSubmit = event =>{
+    // {console.log(event.preventDefault())}
     event.preventDefault();
     setValues({...values,error:false,loading:true})
     signin({email,password})
@@ -34,7 +35,7 @@ const Signin = ()=> {
   }
   const performRedirect = () =>{
     if(didRedirect){
-      if(user && user.role === 1){
+      if(user && user.role == 1){
         return <p>redirect to admin</p>
       }else{
         return <p>redirect to user</p>

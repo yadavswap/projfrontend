@@ -10,11 +10,22 @@ const Menu = (history)=> (
                 Home
             </Link>
         </li>
-        <li className="nav-item">
+        {/* {console.log(isAutheticated().user.role == 1)} */}
+
+        {isAutheticated() && isAutheticated().user.role == 0 && (
+            <li className="nav-item">
             <Link className='nav-link'  to="/dashboard">
-                Dashboard
+               User Dashboard
             </Link>
         </li>
+        )}
+        {isAutheticated() && isAutheticated().user.role == 1 && (
+        <li className="nav-item">
+            <Link className='nav-link'  to="/admin/dashboard">
+               Admin Dashboard
+            </Link>
+        </li>
+        )}
         <li className="nav-item">
             <Link className='nav-link'  to="/category">
             Category
