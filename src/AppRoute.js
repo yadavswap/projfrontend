@@ -7,6 +7,7 @@ import AdminRoute from "./auth/helper/AdminRoutes";
 // import PrivateRoute from "./auth/helper/PrivateRoutes";
 // import UserDashBoard from './user/UserDashBoard';
 import AdminDashBoard from './user/AdminDashBoard';
+import AddCategory from './admin/AddCategory';
 
 
 const AppRoute = () => {
@@ -20,6 +21,8 @@ const AppRoute = () => {
         {/* <AdminRoute path="/admin/dashboard" exact  element={<AdminDashBoard/>} /> */}
 
         <Route path="/admin/dashboard" exact  element={<AdminDashBoard/>} />
+        <Route path="/admin/create/category" exact  element={<AddCategory/>} />
+
       </Switch>
     </BrowserRouter>
   );

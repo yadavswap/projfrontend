@@ -13,7 +13,7 @@ const AdminDashBoard = () => {
       </h4>
       <ul className='list-group'>
         <li className='list-group-item'>
-          <Link  to="admin/category" className='nav-link text-success'>Create Category</Link>
+          <Link  to="admin/create/category" className='nav-link text-success'>Create Category</Link>
         </li>
         <li className='list-group-item'>
           <Link  to="admin/product" className='nav-link text-success'>Create Product</Link>
@@ -24,6 +24,7 @@ const AdminDashBoard = () => {
         <li className='list-group-item'>
           <Link  to="admin/orders" className='nav-link text-success'>Manage Orders</Link>
         </li>
+     
       </ul>
       </div>
       </div>
@@ -39,10 +40,10 @@ const AdminDashBoard = () => {
       </h4>
       <ul className='list-group'>
         <li className='list-group-item'>
-          <span className='badge badge-success mr-2 text-black'> Name : </span>Swapnil
+          <span className='badge badge-success mr-2 text-black'> Name : </span>{name}
         </li>
         <li className='list-group-item'>
-          <span className='badge badge-success mr-2 text-black'> Email : </span>admin@admin.com
+          <span className='badge badge-success mr-2 text-black'> Email : </span>{email}
         </li>
         <li className='list-group-item'>
           <span className='badge badge-danger mr-2 text-black'>Admin Area </span>
