@@ -31,16 +31,21 @@ const Menu = (history)=> (
             Category
             </Link>
         </li>
-        <li className="nav-item">
+        
+        { !isAutheticated() && (
+            <li className="nav-item">
             <Link className='nav-link'   to="/signin">
             Sign In
             </Link>
         </li>
+        )}
+        { !isAutheticated() && (
         <li className="nav-item">
             <Link className='nav-link'   to="/signup">
             Sign Up
             </Link>
         </li>
+        )}
         {isAutheticated() && (
             <li className="nav-item">
             <Link className='nav-link'    onClick={()=>{
