@@ -8,6 +8,8 @@ import AdminRoute from "./auth/helper/AdminRoutes";
 // import UserDashBoard from './user/UserDashBoard';
 import AdminDashBoard from './user/AdminDashBoard';
 import AddCategory from './admin/AddCategory';
+import ManageCategories from './admin/ManageCategories';
+import AddProduct from './admin/AddProduct';
 
 
 const AppRoute = () => {
@@ -22,6 +24,8 @@ const AppRoute = () => {
 
         <Route path="/admin/dashboard" exact  element={<AdminDashBoard/>} />
         <Route path="/admin/create/category" exact  element={<AddCategory/>} />
+        <Route path="/admin/categories" exact  element={<ManageCategories/>} />
+        <Route path="/admin/create/product" exact  element={<AddProduct/>} />
 
       </Switch>
     </BrowserRouter>
