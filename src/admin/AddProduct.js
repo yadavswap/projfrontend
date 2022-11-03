@@ -1,5 +1,4 @@
 import React, { useState,useEffect } from "react";
-import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import { getAllCategories,createProduct } from "./helper/adminapicall";
 import { isAutheticated } from "../auth/helper";
@@ -20,7 +19,7 @@ const AddProduct = () => {
     formData:""
   });
 
-  const { name, description, price, stock,photo,categories,category,loading,error,createdProduct,getRedirect,formData } = values;
+  const { name, description, price, stock,categories,error,createdProduct,formData } = values;
 const preload = ()=>{
 getAllCategories().then(data=>{
     // console.log(data)
@@ -34,7 +33,7 @@ getAllCategories().then(data=>{
 }
 useEffect(() => {
    preload();
-  },[]);
+  });
   const onSubmit = (event) => {
     event.preventDefault();
     setValues({...values,error:"",loading:true})

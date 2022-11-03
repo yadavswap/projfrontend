@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { isAutheticated } from '../auth/helper';
 
 const AdminDashBoard = () => {
-  const {user:{name,email,role}} = isAutheticated();
+  const {user:{name,email}} = isAutheticated();
   const adminLeftSide = ()=>{
     return (
       <div className='container p-4'>
@@ -20,7 +20,7 @@ const AdminDashBoard = () => {
         </li>
       
         <li className='list-group-item'>
-          <Link  to="admin/product" className='nav-link text-success'>Create Product</Link>
+          <Link  to="admin/create/product" className='nav-link text-success'>Create Product</Link>
         </li>
         <li className='list-group-item'>
           <Link  to="admin/products" className='nav-link text-success'>Manage Products</Link>
@@ -55,9 +55,6 @@ const AdminDashBoard = () => {
       </ul>
       </div>
       </>
-
-
-
     )
     
   }   
@@ -73,14 +70,7 @@ const AdminDashBoard = () => {
       {adminRightSide()}
       </div>
     </div>
-    
-    
-
-
     </>
-
-
-    
   )
 }
 

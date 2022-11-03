@@ -3,13 +3,14 @@ import { BrowserRouter, Routes as Switch  , Route } from "react-router-dom";
 import Home from './core/Home';
 import Signin from './user/Signin';
 import Signup from './user/Signup';
-import AdminRoute from "./auth/helper/AdminRoutes";
 // import PrivateRoute from "./auth/helper/PrivateRoutes";
 // import UserDashBoard from './user/UserDashBoard';
 import AdminDashBoard from './user/AdminDashBoard';
 import AddCategory from './admin/AddCategory';
 import ManageCategories from './admin/ManageCategories';
 import AddProduct from './admin/AddProduct';
+import ManageProducts from './admin/ManageProducts';
+import UpdateProduct from './admin/UpdateProduct';
 
 
 const AppRoute = () => {
@@ -26,7 +27,8 @@ const AppRoute = () => {
         <Route path="/admin/create/category" exact  element={<AddCategory/>} />
         <Route path="/admin/categories" exact  element={<ManageCategories/>} />
         <Route path="/admin/create/product" exact  element={<AddProduct/>} />
-
+        <Route path="/admin/products" exact  element={<ManageProducts/>} />
+        <Route path="/admin/product/update/:productId" exact  element={<UpdateProduct/>} />
       </Switch>
     </BrowserRouter>
   );

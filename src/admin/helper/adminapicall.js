@@ -59,9 +59,13 @@ export const createCategory= (userId,token,category) => {
   };
 
   // delete product
-  export const deleteProduct= (productId,userId) => {
+  export const deleteProduct= (productId,userId,token) => {
     return fetch(`http://127.0.0.1:8000/api/product/${productId}/${userId}`,{
       method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`
+      }
       })
     .then(response =>{
       return response.json();
@@ -69,14 +73,14 @@ export const createCategory= (userId,token,category) => {
     .catch((err => console.log(err)));
   };
 
+
   // update product
-  export const updateProduct= (userId,productId,token,product) => {
+  export const updateProduct= (productId,userId,token,product) => {
     return fetch(`http://127.0.0.1:8000/api/product/${productId}/${userId}`,{
       method: "PUT",
       headers:{
           Accept:"application/json",
           Authorization:`Bearer ${token}`
-
       },
       body: product
     })
